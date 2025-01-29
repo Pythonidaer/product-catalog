@@ -5,7 +5,7 @@
   "scripts": {
     "dev:next": "next dev",
     "build": "next build",
-    "star:nextt": "next start",
+    "start:next": "next start",
     "dev:api": "nodemon index.js",
     "start:api": "node index.js"
   },
