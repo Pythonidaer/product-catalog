@@ -6,7 +6,7 @@
     "dev:next": "next dev",
     "build": "next build",
     "start:next": "next start",
-    "dev:api": "nodemon index.js",
+    "dev:api": "nodemon app/index.js",
     "start:api": "node app/index.js"
   },
   "dependencies": {
