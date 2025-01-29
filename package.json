@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "npm run start:api",
+    "start": "node app/index.js",
     "dev:next": "next dev",
     "build": "next build",
     "start:next": "next start",
