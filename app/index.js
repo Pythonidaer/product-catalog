@@ -23,6 +23,10 @@ const corsOptions = {
 app.use(cors(corsOptions));
 app.use(express.json());
 
+app.get('/test', (req, res) => {
+  res.send("✅ API is working on Railway!");
+});
+
 app.get('/api/products', async (req, res) => {
   try {
     const products = await prisma.product.findMany();
