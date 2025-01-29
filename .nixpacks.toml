@@ -1,2 +1,2 @@
 [phases.start]
-cmd = "node app/index.js"
+cmd = "node ./app/index.js"
