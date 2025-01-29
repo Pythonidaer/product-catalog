@@ -7,7 +7,7 @@
     "build": "next build",
     "start:next": "next start",
     "dev:api": "nodemon index.js",
-    "start:api": "node index.js"
+    "start:api": "node app/index.js"
   },
   "dependencies": {
     "@prisma/client": "^5.8.0",
