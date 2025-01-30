@@ -1,20 +1,12 @@
-export default async function Home() {
-  const API_URL = process.env.NEXT_PUBLIC_API_URL; // Backend API URL
-  const testRes = await fetch(`${API_URL}/test`);
-  const testMessage = await testRes.text();
+import React from 'react';
 
-  const productsRes = await fetch(`${API_URL}/api/products`);
-  const products = await productsRes.json();
-
+export default function ProductListingPage() {
   return (
-    <div>
-      <h1>Product Catalog</h1>
-      <p>Test Route Message: {testMessage}</p>
-      <ul>
-        {products.map(product => (
-          <li key={product.id}>{product.name}: ${product.price}</li>
-        ))}
-      </ul>
-    </div>
+    <main className="container mx-auto px-4 py-8">
+      <h1 className="text-3xl font-bold mb-6">Products</h1>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {/* Product grid will go here */}
+      </div>
+    </main>
   );
 }
