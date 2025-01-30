@@ -36,5 +36,43 @@ app.get('/api/products', async (req, res) => {
   }
 });
 
+// Fetch product details by ID
+app.get('/api/products/:id', async (req, res) => {
+  try {
+    const { id } = req.params;
+    const product = await prisma.product.findUnique({
+      where: { id: parseInt(id, 10) },
+    });
+
+    if (!product) {
+      return res.status(404).json({ error: "Product not found" });
+    }
+
+    res.json(product);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
+// Handle contact form submissions
+app.post('/api/contact', async (req, res) => {
+  try {
+    const { name, email, message } = req.body;
+
+    // Basic validation
+    if (!name || !email || !message) {
+      return res.status(400).json({ error: "All fields are required" });
+    }
+
+    // Simulating email sending (replace with actual email logic)
+    console.log(`Contact form submitted: \nName: ${name}\nEmail: ${email}\nMessage: ${message}`);
+
+    res.status(200).json({ message: "Contact form submitted successfully!" });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
+
 const PORT = process.env.PORT || 4000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
