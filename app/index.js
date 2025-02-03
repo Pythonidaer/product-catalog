@@ -92,5 +92,11 @@ app.post('/api/contact', async (req, res) => {
 });
 
 
-const PORT = process.env.PORT || 4000;
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+// ✅ Only start server if executed directly (prevents issues in Jest tests)
+if (require.main === module) {
+  const PORT = process.env.PORT || 4000;
+  app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+}
+
+// ✅ Export app so Supertest can use it
+module.exports = app;

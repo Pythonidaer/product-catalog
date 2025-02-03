@@ -8,10 +8,13 @@
     "build": "next build",
     "start:next": "next start",
     "dev:api": "nodemon app/index.js",
-    "start:api": "node app/index.js"
+    "start:api": "node app/index.js",
+    "test": "jest --runInBand --setupFilesAfterEnv ./tests/setup.js"
+  },
+  "prisma": {
+    "seed": "node prisma/seed.js"
   },
   "dependencies": {
-    "@prisma/client": "^5.8.0",
     "cors": "^2.8.5",
     "express": "^4.18.2",
     "next": "14.1.0",
@@ -19,7 +22,10 @@
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
+    "@prisma/client": "^6.3.0",
+    "jest": "^29.7.0",
     "nodemon": "^3.0.2",
-    "prisma": "^5.8.0"
+    "prisma": "^5.8.0",
+    "supertest": "^7.0.0"
   }
 }

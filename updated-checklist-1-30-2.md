@@ -20,8 +20,10 @@ Build a product catalog web application with features for browsing, filtering, a
 1. [ ] **Create Routes**
    - [x] `/api/products`: Fetch product list.  
    - [x] `/api/products/:id`: Fetch product details.  
+   - [x] `/api/categories`: Fetch category list. 
+   - [x] `/api/brands`: Fetch brand list. 
    - [ ] `/api/contact`: Handle contact form submissions.
-2. [ ] **Integrate PostgreSQL Database**
+2. [x] **Integrate PostgreSQL Database**
    - [x] Set up database connection on Railway.
    - [x] Update API routes to fetch data from the database.
    - [x] Use Prisma ORM for schema and queries.
@@ -38,8 +40,10 @@ Build a product catalog web application with features for browsing, filtering, a
 ---
 ## ✅ Testing
 1. [ ] Write Integration Tests:
-   - [ ] `/api/products` endpoint.
-   - [ ] `/api/products/:id` endpoint.
+   - [x] `/api/products` endpoint.
+   - [x] `/api/products/:id` endpoint.
+   - [x] `/api/categories` endpoint.
+   - [x] `/api/brands` endpoint.
    - [ ] `/api/contact` endpoint.
 2. [ ] Verify frontend for:
    - [x] Correct data display.
@@ -49,10 +53,13 @@ Build a product catalog web application with features for browsing, filtering, a
 1. [x] **Frontend**: Deployed to Netlify.  
 2. [x] **Backend**: Deployed to Railway.  
 3. [ ] Verify production functionality:
-   - [ ] `/api/products` fetches product list.
-   - [ ] `/api/products/:id` fetches product details.
+   - [x] `/api/products` fetches product list.
+   - [x] `/api/products/:id` fetches product details.
+   - [x] `/api/categories` fetches category list.
+   - [x] `/api/brands` fetches brand list.
    - [ ] `/api/contact` submits forms successfully.
 ---
 ## Next Steps
-- Test functionality end-to-end.
+- Document CORS configuration for Netlify, Railway, and local environment.
+- Understand purpose of each configuration file in repository.
 - Ensure CORS configuration works for Netlify → Railway integration.
