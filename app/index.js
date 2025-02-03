@@ -54,6 +54,24 @@ app.get('/api/products/:id', async (req, res) => {
   }
 });
 
+app.get('/api/categories', async (req, res) => {
+  try {
+    const categories = await prisma.category.findMany();
+    res.json(categories);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
+app.get('/api/brands', async (req, res) => {
+  try {
+    const brands = await prisma.brand.findMany();
+    res.json(brands);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
 // Handle contact form submissions
 app.post('/api/contact', async (req, res) => {
   try {

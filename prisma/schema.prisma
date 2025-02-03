@@ -1,15 +1,38 @@
+// generate library to interact with database
 generator client {
   provider = "prisma-client-js"
 }
 
+// describe which datasource we connect to
 datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
 
+// define our database tables
 model Product {
   id          Int    @id @default(autoincrement())
   name        String
   description String
   price       Float
+  categoryId  Int
+  brandId     Int
+  imageUrl    String?
+  videoUrl    String?
+
+  // Relations
+  category  Category @relation(fields: [categoryId], references: [id])
+  brand     Brand  @relation(fields: [brandId], references: [id])
+}
+
+model Category {
+  id          Int    @id @default(autoincrement())
+  name        String @unique
+  products    Product[] // Relation to the Product model
+}
+
+model Brand {
+  id          Int    @id @default(autoincrement())
+  name        String @unique
+  products    Product[] // Relation to the Product model
 }
