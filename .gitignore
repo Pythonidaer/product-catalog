@@ -1,3 +1,7 @@
+# Schemas
+schema.prisma-OLD-2-3
+seed-OLD-2-3.js
+
 # Logs
 logs
 *.log

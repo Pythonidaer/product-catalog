@@ -1,38 +1,83 @@
-// generate library to interact with database
+// schema.prisma
+
 generator client {
   provider = "prisma-client-js"
 }
 
-// describe which datasource we connect to
 datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
 
-// define our database tables
-model Product {
-  id          Int    @id @default(autoincrement())
-  name        String
-  description String
-  price       Float
-  categoryId  Int
-  brandId     Int
-  imageUrl    String?
-  videoUrl    String?
-
-  // Relations
-  category  Category @relation(fields: [categoryId], references: [id])
-  brand     Brand  @relation(fields: [brandId], references: [id])
-}
-
 model Category {
-  id          Int    @id @default(autoincrement())
-  name        String @unique
-  products    Product[] // Relation to the Product model
+  id           Int         @id @default(autoincrement())
+  name         String      // Name of the category (e.g., Plumbing)
+  description  String?     // Optional description
+  slug         String      @unique // URL-safe identifier (e.g., "plumbing")
+  parentId     Int?        // For nested subcategories
+  Parent       Category?   @relation("CategoryParent", fields: [parentId], references: [id])
+  Subcategories Category[] @relation("CategoryParent")
+  products     Product[]   // Products in this category
 }
 
 model Brand {
-  id          Int    @id @default(autoincrement())
-  name        String @unique
-  products    Product[] // Relation to the Product model
+  id      Int      @id @default(autoincrement())
+  name    String   // Brand name (e.g., Rheem)
+  logoUrl String?  // URL to the brand logo
+  slug    String   @unique // URL-safe identifier for /shop/ URLs (e.g., "rheem")
+  products Product[] // One-to-many relationship with products
+}
+
+model Product {
+  id          Int          @id @default(autoincrement())
+  name        String        // Name of the product (e.g., Classic Water Heater)
+  description String?       // Product overview or long description
+  price       Float         // Price of the product
+  slug        String        @unique // URL-safe identifier for the product URL
+  imageUrl    String?       // Product image URL
+  brandId     Int
+  categoryId  Int
+  Brand       Brand         @relation(fields: [brandId], references: [id])
+  Category    Category      @relation(fields: [categoryId], references: [id])
+  overviews   ProductOverview[]    // One-to-many relationship for Product Overview
+  details     ProductDetail[]   
+  modelNumber String?       // Model number (e.g., 9913-DST)
+  productNumber String?     // Product number (e.g., 543385)
+}
+
+model ProductOverview {
+  id        Int     @id @default(autoincrement())
+  content   String  // Overview information (e.g., "1.75 gpm", "Metal lever handles")
+  productId Int
+  Product   Product @relation(fields: [productId], references: [id])
+}
+
+model ProductDetail {
+  id        Int     @id @default(autoincrement())
+  key       String  // Field name (e.g., "Brand", "Shipping Weight")
+  value     String  // Field value (e.g., "PurePro", "6.000 LBS")
+  productId Int
+  Product   Product @relation(fields: [productId], references: [id])
+}
+
+model News {
+  id          Int       @id @default(autoincrement())
+  title       String    // News title
+  slug        String    @unique // URL-safe identifier for the article (e.g., "rheem-partnership")
+  content     String    // Full article content
+  imageUrl    String?   // Optional image
+  publishDate DateTime  // Publish date
+  tag         String?   // Optional tag (e.g., "News Release", "Feature Article")
+}
+
+model Location {
+  id                Int      @id @default(autoincrement())
+  city              String   // City of the store (e.g., Schenectady)
+  state             String   // State of the store (e.g., NY)
+  storeName         String?  // Store name (if applicable)
+  address           String   // Full address
+  phone             String   // Contact phone number
+  hours             Json     // JSON object with daily opening hours
+  emergencyContact  String?  // After-hours contact
+  notes             String?  // Special closing notes or additional details
 }
