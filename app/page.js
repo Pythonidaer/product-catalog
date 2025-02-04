@@ -9,6 +9,10 @@ export default async function ProductListingPage() {
       const productsRes = await fetch(`${API_URL}/api/products`, {
         cache: 'no-store', // Prevents caching for fresh data on every request
       });
+      console.log("API_URL:", API_URL)
+      console.log("Fetch response:", productsRes.status); // Check full response
+      console.log("Response Headers:", productsRes.headers);
+
       if (!productsRes.ok) {
         throw new Error('Failed to fetch products');
       }
