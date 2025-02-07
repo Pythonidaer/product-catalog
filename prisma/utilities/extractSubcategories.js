@@ -1,18 +1,3 @@
-// Debug slugs and find duplicate
-
-const existingSlugs = await prisma.category.findMany({
-  select: { slug: true },
-});
-
-const existingSlugsSet = new Set(existingSlugs.map((cat) => cat.slug));
-const duplicates = valvesSubcategories.filter((subcategory) =>
-  existingSlugsSet.has(subcategory.slug)
-);
-console.log(
-  "Existing duplicate slugs:",
-  duplicates.map((cat) => cat.slug)
-);
-
 // Find Subcategories on fwwebb.com landing pages:
 const subcategories = [];
 

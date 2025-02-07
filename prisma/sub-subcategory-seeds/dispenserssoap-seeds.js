@@ -4,18 +4,31 @@ const prisma = new PrismaClient();
 async function seedSubSubcategories() {
   console.log("🔄 Seeding subsubcategories...");
 
-  // Get Faucets Category ID
-  const faucetsCategory = await prisma.category.findUnique({
+  // Get Dispenser Soap Subcategory ID
+  const dispenserssoapCategory = await prisma.category.findUnique({
     where: { slug: "dispensers-soap" },
   });
 
-  if (faucetsCategory) {
-    const faucetsSubcategories = [];
+  if (dispenserssoapCategory) {
+    const dispenserssoapSubcategories = [
+      {
+          name: "Hot & Drinking Water",
+          slug: "hot-and-drinking-water-dispensers"
+      },
+      {
+          name: "Commercial Bathroom Soap & Lotion Dispensers",
+          slug: "commercial-bathroom-soap-and-lotion-dispensers"
+      },
+      {
+          name: "Residential Bathroom Soap & Lotion Dispensers",
+          slug: "bathroom-soap-and-lotion-dispensers"
+      }
+  ];
 
     await prisma.category.createMany({
-      data: faucetsSubcategories.map((subcategory) => ({
+      data: dispenserssoapSubcategories.map((subcategory) => ({
         ...subcategory,
-        parentId: faucetsCategory.id,
+        parentId: dispenserssoapCategory.id,
       })),
     });
   }

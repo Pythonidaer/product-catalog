@@ -4,18 +4,43 @@ const prisma = new PrismaClient();
 async function seedSubSubcategories() {
   console.log("🔄 Seeding subsubcategories...");
 
-  // Get Faucets Category ID
-  const faucetsCategory = await prisma.category.findUnique({
+  // Get Sinks Subcategory ID
+  const sinksCategory = await prisma.category.findUnique({
     where: { slug: "sinks" },
   });
 
-  if (faucetsCategory) {
-    const faucetsSubcategories = [];
+  if (sinksCategory) {
+    const sinksSubcategories = [
+      {
+          "name": "Bar & Prep",
+          "slug": "bar-and-prep-sinks"
+      },
+      {
+          "name": "Foodservice",
+          "slug": "foodservice-sinks"
+      },
+      {
+          "name": "Kitchen",
+          "slug": "kitchen-sinks"
+      },
+      {
+          "name": "Laundry, Utility & Service",
+          "slug": "laundry-utility-service"
+      },
+      {
+          "name": "Lavatory",
+          "slug": "lavatory-sinks"
+      },
+      {
+          "name": "Vanity",
+          "slug": "vanity-sinks-fixtures"
+      }
+  ];
 
     await prisma.category.createMany({
-      data: faucetsSubcategories.map((subcategory) => ({
+      data: sinksSubcategories.map((subcategory) => ({
         ...subcategory,
-        parentId: faucetsCategory.id,
+        parentId: sinksCategory.id,
       })),
     });
   }

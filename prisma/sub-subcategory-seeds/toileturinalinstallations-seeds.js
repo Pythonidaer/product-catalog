@@ -5,17 +5,26 @@ async function seedSubSubcategories() {
   console.log("🔄 Seeding subsubcategories...");
 
   // Get Faucets Category ID
-  const faucetsCategory = await prisma.category.findUnique({
+  const toileturinalinstallationsCategory = await prisma.category.findUnique({
     where: { slug: "toilet-urinal-installation" },
   });
 
-  if (faucetsCategory) {
-    const faucetsSubcategories = [];
+  if (toileturinalinstallationsCategory) {
+    const toileturinalinstallationsSubcategories = [
+      {
+          name: "Closet Flanges",
+          slug: "closet-flanges"
+      },
+      {
+          name: "Closet Bolts, Wax Rings & Seals",
+          slug: "closet-bolts-wax-rings-and-seals"
+      }
+  ];
 
     await prisma.category.createMany({
-      data: faucetsSubcategories.map((subcategory) => ({
+      data: toileturinalinstallationsSubcategories.map((subcategory) => ({
         ...subcategory,
-        parentId: faucetsCategory.id,
+        parentId: toileturinalinstallationsCategory.id,
       })),
     });
   }
