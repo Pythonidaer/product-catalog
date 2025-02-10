@@ -5,7 +5,7 @@
   "scripts": {
     "start": "node app/index.js",
     "dev:next": "next dev",
-    "build": "next build",
+    "build": "prisma generate && next build",
     "start:next": "next start",
     "dev:api": "nodemon app/index.js",
     "start:api": "node app/index.js",
