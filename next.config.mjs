@@ -1,10 +1,9 @@
-import { defineConfig } from 'next';
+import next from 'next';
+const { defineConfig } = next;
 
-const nextConfig = defineConfig({
+export default defineConfig({
   experimental: {
     appDir: true,
   },
-  output: 'standalone', // Useful for Railway
+  output: 'standalone',
 });
-
-export default nextConfig;
