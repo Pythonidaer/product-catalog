@@ -9,7 +9,7 @@ export default async function ProductDetailsPage({ params }) {
     let product = null;
     try {
       const productRes = await fetch(`${API_URL}/api/products/${id}`, {
-        cache: 'no-store', // Ensures fresh data
+        cache: 'no-store',
       });
       if (!productRes.ok) {
         throw new Error('Failed to fetch product details');
