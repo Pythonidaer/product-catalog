@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'standalone', // Useful for Netlify & Railway
+  output: 'standalone', 
 };
 
 module.exports = nextConfig;
