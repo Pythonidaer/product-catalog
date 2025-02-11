@@ -1,0 +1,149 @@
+/* General */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Top Links */
+.header-top {
+  padding: 10px 0;
+}
+
+.top-links-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.top-links a {
+  margin-left: 15px;
+  color: #d22;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+/* Main Header */
+.header-main {
+  background: white;
+  padding: 15px 0;
+}
+
+.logo img {
+  height: 92px;
+}
+
+/* Search Bar */
+.search-bar {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.search-bar input {
+  border: none;
+  padding: 10px;
+  width: 300px;
+  outline: none;
+}
+
+.search-btn {
+  background: #fff;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  font-size: 16px;
+}
+
+/* User Actions */
+.user-actions {
+  display: flex;
+  align-items: center;
+}
+
+.user-actions a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
+
+.cart {
+  position: relative;
+}
+
+.cart-count {
+  background: red;
+  color: white;
+  font-size: 12px;
+  border-radius: 50%;
+  padding: 3px 6px;
+  position: absolute;
+  top: -10px;
+  right: -10px;
+}
+
+/* Navigation Bar */
+.nav-bar {
+  background: white;
+  border-top: 1px solid #ddd;
+}
+
+.nav-bar .container {
+  width: 100%;
+  max-width: 1200px; /* Match max width */
+  margin: 0 auto;
+}
+
+.nav-bar ul {
+  list-style: none;
+  display: flex;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-bar li {
+  position: relative;
+}
+
+.dropdown:first-child {
+  font-weight: bold;
+}
+
+.nav-bar a {
+  display: block;
+  padding: 15px 20px;
+  text-decoration: none;
+  color: black;
+}
+
+/* Dropdown */
+.dropdown-menu {
+  display: flex;
+  position: absolute;
+  background: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  left: 0;
+  right: 0; /* Stretches across full width */
+  border: 1px solid #ccc;
+  z-index: 10;
+  justify-content: space-between;
+  min-width: 1200px; /* Match the container width */
+  margin: 0 auto; /* Centers it */
+}
+
+.dropdown-column {
+  flex: 1;
+  padding: 10px;
+}
+
+.dropdown-column a {
+  display: block;
+  padding: 5px;
+  color: black;
+  font-weight: normal;
+}
