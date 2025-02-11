@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import ".././Header.css"
+import "../styles/Header.css"
 
 export default function Header() {
   const [dropdownVisible, setDropdownVisible] = useState(false);
@@ -10,7 +10,7 @@ export default function Header() {
     <header>
       {/* Top Header with Links */}
       <div className="header-top">
-        <div className="container top-links-container">
+        <div className="container flex-container top-links-container">
           <div className="top-links">
             <a href="/locations/">📍 LOCATIONS</a>
             <a href="/help/">SUPPORT</a>
@@ -22,7 +22,7 @@ export default function Header() {
 
       {/* Main Header */}
       <div className="header-main">
-        <div className="container">
+        <div className="container flex-container">
           {/* Logo */}
           <div className="logo">
             <a href="/">
@@ -46,7 +46,7 @@ export default function Header() {
 
       {/* Navigation Bar */}
       <nav className="nav-bar">
-        <div className="container">
+        <div className="container flex-container">
           <ul>
             <li
               className="dropdown"

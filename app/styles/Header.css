@@ -2,6 +2,9 @@
 .container {
   max-width: 1200px;
   margin: 0 auto;
+}
+
+.flex-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -32,6 +35,7 @@
 
 .logo img {
   height: 92px;
+  padding: 0 20px;
 }
 
 /* Search Bar */
@@ -147,3 +151,5 @@
   color: black;
   font-weight: normal;
 }
+
+

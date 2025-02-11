@@ -21,7 +21,7 @@ export default async function ProductListingPage() {
   }
 
   return (
-    <main>
+    <main className="container">
       <h1>Products</h1>
       {/* <ul>
         <li>
