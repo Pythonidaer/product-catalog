@@ -21,9 +21,9 @@ export default async function ProductListingPage() {
   }
 
   return (
-    <main>
+    <main className="container">
       <h1>Products</h1>
-      <ul>
+      {/* <ul>
         <li>
           <a href="#">Shop All Depts</a>
           <section>
@@ -85,7 +85,7 @@ export default async function ProductListingPage() {
             </ul>
           </section>
         </li>
-      </ul>
+      </ul> */}
 
       <ul>
         {products.length > 0 ? (

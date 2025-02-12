@@ -1,0 +1,370 @@
+/* -------------------------- */
+/* General */
+/* -------------------------- */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.flex-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* -------------------------- */
+/* Top Links */
+/* -------------------------- */
+.header-top {
+  padding: 10px 0;
+}
+
+.top-links-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.top-links a {
+  margin-left: 15px;
+  color: #d22;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+/* -------------------------- */
+/* Desktop Header */
+/* -------------------------- */
+.desktop-header {
+  background: white;
+  padding: 15px 0;
+}
+
+.desktop-header .logo img {
+  height: 92px;
+  padding: 0 20px;
+}
+
+.desktop-header .search-bar {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.desktop-header .search-bar input {
+  border: none;
+  padding: 10px;
+  width: 300px;
+  outline: none;
+}
+
+.desktop-header .search-btn {
+  background: #fff;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  font-size: 16px;
+}
+
+.desktop-header .user-actions {
+  display: flex;
+  align-items: center;
+}
+
+.desktop-header .user-actions a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
+
+.desktop-header .cart {
+  position: relative;
+}
+
+.desktop-header .cart-count {
+  background: red;
+  color: white;
+  font-size: 12px;
+  border-radius: 50%;
+  padding: 3px 6px;
+  position: absolute;
+  top: -10px;
+  right: -10px;
+}
+
+/* -------------------------- */
+/* Mobile Header */
+/* -------------------------- */
+.mobile-header {
+  background: white;
+  padding: 10px 0;
+  display: none; /* hidden by default, shown via media query */
+  flex-direction: column;
+}
+
+/* Top row of mobile header */
+.mobile-top-row {
+  display: flex;
+  /* Change width to account for container's padding */
+  width: calc(100% - 15px);
+  align-items: center;
+  justify-content: space-between;
+}
+
+.mobile-left,
+.mobile-center,
+.mobile-right {
+  flex: 1;
+  text-align: center;
+}
+
+.mobile-left {
+  text-align: left;
+  display: flex;
+  align-items: center;
+}
+
+.mobile-right {
+  text-align: right;
+}
+
+/* Hamburger button */
+.hamburger-button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  margin-left: 4px;
+  height: 32px;
+}
+
+/* Mobile logo styling */
+.mobile-logo {
+  width: 48px;
+  height: 48px;
+}
+
+/* Mobile search row: force search bar to full width on a new row */
+.mobile-search-row {
+  margin-top: 10px;
+  width: calc(100% - 15px);
+}
+
+/* The mobile search bar styling reuses the .search-bar style */
+.mobile-header .mobile-search-row .search-bar {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.mobile-header .mobile-search-row .search-bar input {
+  border: none;
+  padding: 10px;
+  flex: 1;
+  outline: none;
+}
+
+.mobile-header .mobile-search-row .search-btn {
+  background: #fff;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  font-size: 16px;
+}
+
+/* -------------------------- */
+/* Navigation Bar */
+/* -------------------------- */
+.nav-bar {
+  background: white;
+  border-top: 1px solid #ddd;
+  padding: 0;
+}
+
+.nav-bar .container {
+  width: 100%;
+  max-width: 1200px; /* Match max width */
+  margin: 0 auto;
+}
+
+.nav-bar ul {
+  list-style: none;
+  display: flex;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-bar li {
+  position: relative;
+}
+
+.dropdown:first-child {
+  font-weight: bold;
+}
+
+.nav-bar a {
+  display: block;
+  padding: 15px 20px;
+  text-decoration: none;
+  color: black;
+}
+
+/* -------------------------- */
+/* Dropdown Menu */
+/* -------------------------- */
+.dropdown-menu {
+  display: flex;
+  position: absolute;
+  background: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  left: 0;
+  right: 0; /* Stretches across full width */
+  border: 1px solid #ccc;
+  z-index: 10;
+  justify-content: space-between;
+  min-width: 1200px; /* Match the container width */
+  margin: 0 auto; /* Centers it */
+}
+
+.dropdown-column {
+  flex: 1;
+  padding: 10px;
+}
+
+.dropdown-column a {
+  display: block;
+  padding: 5px;
+  color: black;
+  font-weight: normal;
+}
+
+/* -------------------------- */
+/* Offcanvas Mobile Menu */
+/* -------------------------- */
+.offcanvas {
+  position: fixed;
+  top: 0;
+  left: 0;  /* Force visible */
+  width: 320px;
+  height: 100%;
+  background-color: rgba(248,248,248,0.9);
+  z-index: 999;
+  overflow-y: auto;
+  padding: 15px;
+}
+
+.offcanvas.open {
+  transform: translateX(320px);
+}
+
+.offcanvas-close {
+  background: transparent;
+  border: none;
+  font-size: 2rem;
+  line-height: 1;
+  cursor: pointer;
+  display: block;
+  margin-bottom: 20px;
+}
+
+.offcanvas-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.offcanvas-menu li {
+  margin-bottom: 15px;
+  text-decoration: none;
+  color: #333;
+  font-size: 1.2rem;
+}
+
+.offcanvas-menu a {
+  text-decoration: none;
+  color: #333;
+  font-size: 1.2rem;
+}
+
+.sub-menu-arrow {
+  float: right;
+}
+
+/* -------------------------- */
+/* Responsive Adjustments for Mobile */
+/* -------------------------- */
+@media (max-width: 768px) {
+  .container {
+    padding: 0;
+  }
+  
+  /* Hide desktop header on mobile */
+  .desktop-header {
+    display: none;
+  }
+  
+  /* Show mobile header on mobile */
+  .mobile-header {
+    display: flex;
+  }
+  
+  /* Hide default navigation bar on mobile */
+  .nav-bar {
+    display: none;
+  }
+  
+  /* Adjust top links background and color */
+  .header-top {
+    background: linear-gradient(0deg, rgba(119,10,6,1) 0%, rgba(195,16,9,1) 100%);
+    color: #FFF;
+    height: 40px;
+    padding: 0;
+  }
+  
+  .top-links-container {
+    justify-content: space-between;
+    padding: 8px 12px;
+  }
+  
+  .top-links {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 8px;
+  }
+  
+  .top-links a {
+    color: #FFF;
+    margin-left: 0;
+  }
+  
+  /* Optionally hide elements with class d-sm-none */
+  .d-sm-none {
+    display: none;
+  }
+  
+  /* For mobile, force a smaller logo in the header */
+  .logo img {
+    width: 48px;
+    height: 48px;
+  }
+}
+
+.offcanvas-back-button {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  font-size: 1.2rem;
+  color: #333;
+  text-decoration: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+}
