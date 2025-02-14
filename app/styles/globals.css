@@ -12,3 +12,34 @@ a,
 a:hover {
   text-decoration: none;
 }
+
+/* -------------------------- */
+/* General */
+/* -------------------------- */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+  /* padding: 1rem; */
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+      max-width: 960px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+      max-width: 1140px;
+  }
+}
+@media (min-width: 1400px) {
+  .container {
+      max-width: 1320px;
+  }
+}
