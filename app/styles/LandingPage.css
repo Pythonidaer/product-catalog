@@ -1,0 +1,64 @@
+/* Container Styling */
+  
+  /* Category Header */
+  .category-page-header {
+    font-size: 1.625rem; /* 162.5% */
+    font-weight: bold;
+    background-color: #eeeeee;
+    padding: 20px;
+    margin-bottom: 20px;
+    text-align: left;
+  }
+  
+  /* Subcategory Grid Layout */
+  .subcategory-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Default: 2 columns */
+    gap: 16px;
+    padding: 1rem 12px;
+  }
+  
+  /* Tablet View: 3 Columns */
+  @media (min-width: 576px) {
+    .subcategory-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  
+  /* Desktop View: 4 Columns */
+  @media (min-width: 992px) {
+    .subcategory-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+  
+  /* Individual Subcategory Cards */
+  .subcategory-card {
+    background-color: #fff;
+    padding: 20px;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 6px 5px rgba(0, 0, 0, 0.08), 0 0 6px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-decoration: none;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100px; /* Adjust as needed */
+  }
+  
+  /* Hover Effects */
+  .subcategory-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Text Styling */
+  .subcategory-card p {
+    font-size: 1.1rem;
+    font-weight: normal;
+    padding: 5px;
+    text-align: center;
+  }
+  
