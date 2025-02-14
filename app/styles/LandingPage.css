@@ -62,3 +62,39 @@
     text-align: center;
   }
   
+
+  /* Skeleton Base Style */
+.skeleton {
+    background: linear-gradient(90deg, #eee 25%, #ddd 50%, #eee 75%);
+    background-size: 200% 100%;
+    animation: loading 1.5s infinite;
+    border-radius: 8px;
+  }
+  
+  /* Skeleton for Category Header */
+  .category-page-header.skeleton {
+    height: 40px;
+    margin-bottom: 20px;
+  }
+  
+  /* Skeleton for Grid Items */
+  .subcategory-card.skeleton {
+    height: 100px; /* Adjust height to match actual cards */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Skeleton Text */
+  .skeleton-text {
+    width: 50%;
+    height: 12px;
+    background: #ddd;
+    border-radius: 4px;
+  }
+  
+  /* Skeleton Animation */
+  @keyframes loading {
+    0% { background-position: 100% 0; }
+    100% { background-position: -100% 0; }
+  }

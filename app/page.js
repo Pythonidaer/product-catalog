@@ -23,69 +23,6 @@ export default async function ProductListingPage() {
   return (
     <main className="container">
       <h1>Products</h1>
-      {/* <ul>
-        <li>
-          <a href="#">Shop All Depts</a>
-          <section>
-            <ul>
-              <li>
-                <a href="/landing/main-plumbing">Plumbing</a>
-              </li>
-              <li>
-                <a href="/landing/main-heating">Heating</a>
-              </li>
-              <li>
-                <a href="/landing/main-hvacr">HVAC/R</a>
-              </li>
-              <li>
-                <a href="/landing/main-propane">Propane</a>
-              </li>
-            </ul>
-            <ul>
-              <li>
-                <a href="/landing/main-pipe">Pipe & Tube</a>
-              </li>
-              <li>
-                <a href="/landing/main-electrical">Electrical</a>
-              </li>
-              <li>
-                <a href="/landing/fire-protection">Fire Protection</a>
-              </li>
-              <li>
-                <a href="/landing/main-fittings">Fittings</a>
-              </li>
-            </ul>
-            <ul>
-              <li>
-                <a href="/landing/main-hangers">Hangers</a>
-              </li>
-              <li>
-                <a href="/landing/main-hardware">Hardware</a>
-              </li>
-              <li>
-                <a href="/landing/main-industrial">Industrial</a>
-              </li>
-              <li>
-                <a href="/landing/main-safety">Safety</a>
-              </li>
-            </ul>
-            <ul>
-              <li>
-                <a href="/landing/specialties">Specialties</a>
-              </li>
-              <li>
-                <a href="/landing/main-tools">Tools</a>
-              </li>
-              <li>
-                <a href="/landing/main-valves">Valves</a>
-              </li>
-              <li>
-                <a href="/landing/well-systems">Well Systems</a>
-              </li>
-            </ul>
-          </section>
-        </li>
-      </ul> */}
 
       <ul>
         {products.length > 0 ? (
