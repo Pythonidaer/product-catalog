@@ -1,3 +1,6 @@
+* {
+  box-sizing: border-box;
+}
 body {
   font-family: "Commissioner", "Helvetica", "Arial", sans-serif;
   font-size: 100%;
@@ -16,6 +19,7 @@ a:hover {
 /* -------------------------- */
 /* General */
 /* -------------------------- */
+/* Container */
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -25,20 +29,33 @@ a:hover {
 @media (max-width: 768px) {
   .container {
     padding: 0;
+    padding: 0 24px 24px;
   }
 }
+
 @media (min-width: 992px) {
   .container {
-      max-width: 960px;
+    max-width: 960px;
   }
 }
+
 @media (min-width: 1200px) {
   .container {
-      max-width: 1140px;
+    max-width: 1140px;
   }
 }
+
 @media (min-width: 1400px) {
   .container {
-      max-width: 1320px;
+    max-width: 1320px;
   }
+}
+
+.category-page-header {
+  font-size: 1.625rem;
+  font-weight: bold;
+  background-color: #eeeeee;
+  padding: 20px;
+  margin-bottom: 20px;
+  text-align: left;
 }

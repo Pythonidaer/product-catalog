@@ -21,11 +21,7 @@ export default function Header() {
         <div className="container flex-container top-links-container">
           <div className="top-links">
             <a href="/locations/">📍 LOCATIONS</a>
-            <a href="/help/">SUPPORT</a>
-            <a className="d-sm-none" href="/webbrewards/">
-              REWARDS
-            </a>
-            <a href="/careers/">CAREERS</a>
+            {/* <a href="/careers/">CAREERS</a> */}
           </div>
         </div>
       </div>
@@ -152,13 +148,10 @@ export default function Header() {
                 <a href="/landing/main-propane">Propane</a>
               </li>
               <li className="menu-item">
-                <a href="/brands.php">Top Brands</a>
+                <a href="/brands">Top Brands</a>
               </li>
               <li className="menu-item">
-                <a href="/about-us.php">About Us</a>
-              </li>
-              <li className="menu-item">
-                <a href="/events/">Events &amp; Training</a>
+                <a href="/about-us">About Us</a>
               </li>
             </ul>
           ) : activeSubmenu === "shopAllDepts" ? (
@@ -295,13 +288,10 @@ export default function Header() {
               <a href="/landing/main-propane">Propane</a>
             </li>
             <li>
-              <a href="/brands.php">Top Brands</a>
+              <a href="/brands">Top Brands</a>
             </li>
             <li>
-              <a href="/about-us.php">About Us</a>
-            </li>
-            <li>
-              <a href="/events/">Events &amp; Training</a>
+              <a href="/about-us">About Us</a>
             </li>
           </ul>
         </div>

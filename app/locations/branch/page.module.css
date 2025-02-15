@@ -1,0 +1,102 @@
+.locationHeader {
+  padding: 1rem;
+}
+
+.locationHeader h1 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.branchContainer {
+  padding: 0 1rem;
+}
+
+.branchSection {
+  background: white;
+  border: 1px solid #ddd;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+  .branchSection {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2rem;
+    align-items: start;
+  }
+}
+
+.branchInfo, .hoursSection, .contactInfo {
+  padding-top: 1.5rem;
+}
+
+.branchInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.branchInfo h2 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.address {
+  margin: 0.25rem 0;
+  color: #333;
+  line-height: 1.4;
+}
+
+.hourRow {
+  display: grid;
+  grid-template-columns: 45px 1fr;
+  gap: 0.5rem;
+  padding: 0.15rem 0;
+  color: #333;
+}
+
+.hourRow span:first-child {
+  font-weight: 500;
+}
+
+.hoursSection h3, .contactInfo h3 {
+  margin: 0 0 0.75rem 0;
+  font-weight: bold;
+}
+
+.contactInfo p {
+  margin: 0.25rem 0;
+  color: #333;
+}
+
+.contactInfo a {
+  color: #0066cc;
+  text-decoration: none;
+}
+
+.contactInfo a:hover {
+  text-decoration: underline;
+}
+
+.note {
+  padding: 1rem;
+  background-color: #fff3cd;
+  color: #856404;
+}
+
+/* Mobile Styles */
+@media (max-width: 767px) {
+  .branchSection > div {
+    margin-bottom: 1.5rem;
+  }
+
+  .branchSection > div:last-child {
+    margin-bottom: 0;
+  }
+
+  .branchInfo {
+    text-align: center;
+  }
+}
