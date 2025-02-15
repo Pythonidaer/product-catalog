@@ -1,0 +1,112 @@
+.accordion {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.accordionItem {
+  margin-bottom: 0.5rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+}
+
+.stateButton {
+  width: 100%;
+  padding: 1rem;
+  background-color: #A9A9A9;
+  color: white;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.stateButton:hover {
+  background-color: #999;
+}
+
+.arrow {
+  color: white;
+  transform: rotate(0deg);
+  transition: transform 0.3s ease;
+}
+
+.stateButton.active .arrow {
+  transform: rotate(360deg);
+}
+
+.panel {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-top: none;
+}
+
+.panelOpen {
+  max-height: 2000px;
+  transition: max-height 0.5s ease-in;
+}
+
+.locationGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+  padding: 1rem;
+}
+
+.locationCard {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.locationCard h3 {
+  margin: 0 0 0.5rem 0;
+  color: #333;
+}
+
+.storeName {
+  color: #666;
+  font-style: italic;
+  margin-bottom: 0.5rem;
+}
+
+.emergency {
+  margin-top: 0.5rem;
+  color: #d32f2f;
+}
+
+.locationLink {
+  display: block;
+  padding: 0.5rem;
+  color: #0a58ca;
+  text-decoration: none;
+}
+
+.locationLink:hover {
+  color: #333;
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+  .locationGrid {
+    grid-template-columns: 1fr;
+    padding: 0.8rem;
+    gap: 1rem;
+  }
+
+  .locationCard {
+    padding: 1rem;
+  }
+
+  .stateButton {
+    padding: 0.8rem;
+    font-size: 1rem;
+  }
+}

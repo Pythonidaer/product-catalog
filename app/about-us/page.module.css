@@ -1,0 +1,138 @@
+.aboutContent {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.section {
+  margin-bottom: 3rem;
+}
+
+.section h2 {
+  font-size: 1.8rem;
+  color: #333;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+}
+
+.socialLinks {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
+
+.socialItem {
+  background: #f8f9fa;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.2s, box-shadow 0.2s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.socialItem:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.iconWrapper {
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.socialItem h3 {
+  font-size: 1.3rem;
+  color: #0066cc;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.socialItem p {
+  color: #555;
+  line-height: 1.4;
+  margin: 0;
+}
+
+.techStack {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
+
+.techItem {
+  background: #f8f9fa;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.techItem h3 {
+  font-size: 1.3rem;
+  color: #0066cc;
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+.techItem p {
+  color: #555;
+  line-height: 1.6;
+}
+
+.objectivesList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.objectivesList li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+  color: #444;
+  line-height: 1.6;
+}
+
+.objectivesList li::before {
+  content: "•";
+  color: #0066cc;
+  position: absolute;
+  left: 0;
+  font-weight: bold;
+}
+
+.disclaimer {
+  margin-top: 4rem;
+  padding: 1.5rem;
+  background: #fff3cd;
+  border-radius: 8px;
+  color: #856404;
+}
+
+.disclaimer p {
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .aboutContent {
+    padding: 1rem;
+  }
+
+  .section h2 {
+    font-size: 1.5rem;
+  }
+
+  .techStack, .socialLinks {
+    grid-template-columns: 1fr;
+  }
+}

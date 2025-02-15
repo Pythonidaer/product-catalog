@@ -1,0 +1,96 @@
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.modalContent {
+  background: white;
+  border-radius: 4px;
+  width: 100%;
+  max-width: 600px;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+}
+
+.modalHeader {
+  position: sticky;
+  top: 0;
+  padding: 15px 20px;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  z-index: 1;
+}
+
+.modalHeader h2 {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.closeButton {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0;
+  color: #666;
+  line-height: 1;
+}
+
+.locationList {
+  padding: 20px;
+}
+
+.locationItem {
+  padding: 15px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.locationItem:last-child {
+  border-bottom: none;
+}
+
+.locationItem h3 {
+  margin: 0 0 8px 0;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.locationItem p {
+  margin: 4px 0;
+  color: #333;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .modalOverlay {
+    padding: 0;
+  }
+
+  .modalContent {
+    height: 100vh;
+    max-height: 100vh;
+    border-radius: 0;
+  }
+
+  .locationList {
+    padding: 15px;
+  }
+
+  .locationItem {
+    padding: 12px 0;
+  }
+}
