@@ -7,8 +7,8 @@ Build a product catalog web application with features for browsing, filtering, a
    - [x] `/`: Product listing page.
    - [x] `/product/[id]`: Product details page.
    - [x] `/contact`: Contact form.
-2. [ ] **Install React Hooks**
-   - [ ] Install any necessary React state management libraries.
+2. [x] **Install React Hooks**
+   - [x] Install any necessary React state management libraries.
      ```bash
      npm install
      ```
@@ -45,9 +45,9 @@ Build a product catalog web application with features for browsing, filtering, a
    - [x] `/api/categories` endpoint.
    - [x] `/api/brands` endpoint.
    - [ ] `/api/contact` endpoint.
-2. [ ] Verify frontend for:
+2. [x] Verify frontend for:
    - [x] Correct data display.
-   - [ ] Mobile responsiveness.
+   - [x] Mobile responsiveness.
 ---
 ## ✅ Deployment
 1. [x] **Frontend**: Deployed to Netlify.  
