@@ -1,4 +1,7 @@
-import Link from 'next/link';
+"use client";
+
+import React from "react";
+import { useRouter } from "next/navigation";
 import localFont from 'next/font/local';
 import Lightbox from './components/Lightbox';
 
@@ -8,6 +11,16 @@ const spaceGrotesk = localFont({
 });
 
 export default function NotFound() {
+  const router = useRouter();
+
+  const handleReturnHome = () => {
+    // This will push the home route onto the navigation stack,
+    // causing a full re-render of the Home page.
+    router.push('/');
+    // Alternatively, you can call router.reload() if needed:
+    // router.reload();
+  };
+
   return (
     <main className="not-found-container" role="main" aria-labelledby="error-title">
       <div className="not-found-content">
@@ -23,14 +36,13 @@ export default function NotFound() {
             take a look at my database schema!
           </p>
           
-          <Link 
-            href="/" 
+          <button 
+            onClick={handleReturnHome}
             className="not-found-button"
             aria-label="Return to homepage"
-            replace
           >
             Return Home
-          </Link>
+          </button>
         </section>
 
         <section className="not-found-image-section" aria-labelledby="schema-title">
