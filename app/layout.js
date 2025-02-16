@@ -1,5 +1,6 @@
 import "./styles/globals.css";
 import Header from "./components/Header";
+import Footer from "./components/Footer";
 
 export const metadata = {
   title: "Product Catalog",
@@ -15,6 +16,7 @@ export default function RootLayout({ children }) {
       <body>
         <Header></Header>
         {children}
+        <Footer></Footer>
       </body>
     </html>
   );
