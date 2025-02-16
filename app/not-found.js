@@ -27,6 +27,7 @@ export default function NotFound() {
             href="/" 
             className="not-found-button"
             aria-label="Return to homepage"
+            replace
           >
             Return Home
           </Link>
