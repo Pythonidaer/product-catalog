@@ -20,6 +20,19 @@ export default async function ProductListingPage() {
     console.error(error);
   }
 
+  const departments = [
+    { name: 'Plumbing', href: '/landing/main-plumbing', image: '/departments/front-page-plumbing.webp' },
+    { name: 'Heating', href: '/landing/main-heating', image: '/departments/front-page-heating.webp' },
+    { name: 'HVAC/R', href: '/landing/main-hvacr', image: '/departments/front-page-hvac.webp' },
+    { name: 'Pipe & Tube', href: '/landing/main-pipe', image: '/departments/front-page-pipe.webp' },
+    { name: 'Valves', href: '/landing/main-valves', image: '/departments/front-page-valves.webp' },
+    { name: 'Fittings', href: '/landing/main-fittings', image: '/departments/front-page-fittings.webp' },
+    { name: 'Hangers', href: '/landing/main-hangers', image: '/departments/front-page-hangers.webp' },
+    { name: 'Electrical', href: '/landing/main-electrical', image: '/departments/front-page-electrical.webp' },
+    { name: 'Tools', href: '/landing/main-tools', image: '/departments/front-page-tools-2.webp' },
+    { name: 'Safety', href: '/landing/main-safety', image: '/departments/front-page-safety.webp' },
+  ];
+
   const brands = [
     { name: 'Charlotte Pipe', href: '/shop/charlotte', image: '/brands/CharlottePipe.webp' },
     { name: 'Delta Faucet', href: '/shop/delta', image: '/brands/Delta.webp' },
@@ -54,8 +67,27 @@ export default async function ProductListingPage() {
 
   return (
     <>
-      <main className="main-container">
-        <h1>Products</h1>
+      <main className="container">
+        <section className="departments-container">
+          <div className="departments-grid" role="list">
+            {departments.map((department) => (
+              <div key={department.name} className="department-item" role="listitem">
+                <a href={department.href} className="department-link">
+                  <img
+                    src={department.image}
+                    alt={department.name}
+                    width="100"
+                    height="100"
+                    loading="lazy"
+                  />
+                  <p className="department-name">{department.name}</p>
+                </a>
+              </div>
+            ))}
+          </div>
+        </section>
+
+      {/*}   <h1>Products</h1>
         <ul className="products-list">
           {products && products.length > 0 ? (
             products.map((product) => (
@@ -68,7 +100,7 @@ export default async function ProductListingPage() {
           ) : (
             <p>No products available.</p>
           )}
-        </ul>
+        </ul> */}
 
         <section className="brands-container">
           <h2>Top Brands</h2>
