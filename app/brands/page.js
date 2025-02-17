@@ -1,31 +1,36 @@
 import styles from './page.module.css';
+import brands from '../data/brands';
 
 export default function BrandsPage() {
   return (
-    <div className="container">
+    <main className="container">
       <h1 className="category-page-header">Trusted Brands - Quality and Reliability</h1>
-      
       <div className={styles.headerInfo}>
-        <h2 className={styles.sectionTitle}>Wide Selection of Leading Industry Brands</h2>
-        <h3 className={styles.sectionSubtitle}>Explore Products by Brand Category</h3>
+        <h2 className={styles.sectionTitle}>Wide Selection of Leading Industry Brands
+        </h2>
+        <h3 className={styles.sectionSubtitle}>Explore Products by Brand Category
+        </h3>
       </div>
-
-      <div className={styles.mainContent}>
-        <div className={styles.description}>
-          Our extensive catalog features products from the industry's most trusted manufacturers, 
-          ensuring quality, reliability, and innovation across all categories. From plumbing and 
-          heating to HVAC and industrial supplies, we partner with leading brands to provide you 
-          with the best solutions for your needs.
+      <hr/>
+      <section className="brands-container">
+        <h2 style={{ fontSize: '200%', margin: '0 0 10px 0' }}>Top Brands</h2>
+        <div className="brands-grid" role="list">
+          {brands.map((brand) => (
+            <div key={brand.name} className="brand-item" role="listitem">
+              <a href={brand.href} className="brand-link" aria-label={brand.name}>
+                <img
+                  className="brand-img"
+                  src={brand.image}
+                  alt={brand.name}
+                  width="193"
+                  height="118"
+                  loading="lazy"
+                />
+              </a>
+            </div>
+          ))}
         </div>
-
-        {/* Placeholder for future brand categories and listings */}
-        <section className={styles.brandsSection}>
-          <p className={styles.comingSoon}>
-            Brand categories and product listings coming soon. Check back for updates 
-            to explore our complete selection of trusted manufacturers and their products.
-          </p>
-        </section>
-      </div>
-    </div>
+      </section>
+    </main>
   );
 }
