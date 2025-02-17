@@ -1,4 +1,5 @@
 import React from "react";
+import brands from "./data/brands";
 
 export default async function ProductListingPage() {
   const API_URL = process.env.NEXT_PUBLIC_API_URL;
@@ -33,37 +34,6 @@ export default async function ProductListingPage() {
     { name: 'Safety', href: '/landing/main-safety', image: '/departments/front-page-safety.webp' },
   ];
 
-  const brands = [
-    { name: 'Charlotte Pipe', href: '/shop/charlotte', image: '/brands/CharlottePipe.webp' },
-    { name: 'Delta Faucet', href: '/shop/delta', image: '/brands/Delta.webp' },
-    { name: 'Ideal', href: '/shop/ideal', image: '/brands/Ideal.webp' },
-    { name: 'Milwaukee', href: '/shop/milwaukee-tools', image: '/brands/Milwaukee.webp' },
-    { name: 'Navien', href: '/shop/navien', image: '/brands/NAV-Logo.webp' },
-    { name: 'Oatey', href: '/shop/oatey', image: '/brands/Oatey.webp' },
-    { name: 'American Standard', href: '/shop/american-standard', image: '/brands/american-standard.webp' },
-    { name: 'Amtrol', href: '/shop/amtrol', image: '/brands/amtrol.webp' },
-    { name: 'Apollo', href: '/shop/apollo', image: '/brands/apollo-valves.webp' },
-    { name: 'Burnham', href: '/shop/burnham', image: '/brands/burnham.webp' },
-    { name: 'Caleffi', href: '/shop/caleffi', image: '/brands/caleffi.webp' },
-    { name: 'Elkay', href: '/shop/elkay', image: '/brands/elkay.webp' },
-    { name: 'Georg Fischer', href: '/shop/georg-fischer', image: '/brands/georg-fischer.webp' },
-    { name: 'Gerber', href: '/shop/gerber', image: '/brands/gerber.webp' },
-    { name: 'Lochinvar', href: '/shop/lochinvar', image: '/brands/lochinvar.webp' },
-    { name: 'Modine', href: '/shop/modine', image: '/brands/modine.webp' },
-    { name: 'Moen', href: '/shop/moen', image: '/brands/moen.webp' },
-    { name: 'Nibco', href: '/shop/nibco', image: '/brands/nibco.webp' },
-    { name: 'PurePro', href: '/shop/purepro', image: '/brands/pure-pro.webp' },
-    { name: 'RLS', href: '/shop/rls', image: '/brands/rapid-locking-system.webp' },
-    { name: 'Resideo', href: '/shop/resideo', image: '/brands/resideo.webp' },
-    { name: 'Rheem', href: '/shop/rheem', image: '/brands/rheem.webp' },
-    { name: 'Samsung', href: '/shop/samsung', image: '/brands/samsung.webp' },
-    { name: 'Symmons', href: '/shop/symmons', image: '/brands/symmons.webp' },
-    { name: 'Taco', href: '/shop/taco', image: '/brands/taco.webp' },
-    { name: 'Toto', href: '/shop/toto', image: '/brands/toto.webp' },
-    { name: 'Watts', href: '/shop/watts', image: '/brands/watts.webp' },
-    { name: 'Weil McLain', href: '/shop/weil-mclain', image: '/brands/weil-mclain.webp' },
-    { name: 'Worthington', href: '/shop/worthington', image: '/brands/worthington.webp' }
-  ];
 
   return (
     <>
@@ -109,7 +79,7 @@ export default async function ProductListingPage() {
               <div key={brand.name} className="brand-item" role="listitem">
                 <a href={brand.href} className="brand-link" aria-label={brand.name}>
                   <img
-                    className="bw-logo"
+                    className="brand-img bw-logo"
                     src={brand.image}
                     alt={brand.name}
                     width="193"

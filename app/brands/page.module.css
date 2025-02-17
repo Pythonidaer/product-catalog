@@ -1,5 +1,6 @@
+
 .headerInfo {
-  margin: 2rem 0;
+  margin: 1rem 0;
   padding: 0 1rem;
 }
 
@@ -12,8 +13,8 @@
 
 .sectionSubtitle {
   font-size: 1.1rem;
-  color: #666;
-  margin-bottom: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
 }
 
 .mainContent {

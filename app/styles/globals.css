@@ -15,6 +15,16 @@ a,
 a:hover {
   text-decoration: none;
 }
+hr {
+  margin: 1rem 0;
+  color: inherit;
+  background-color: currentColor;
+  border: 0;
+  opacity: .25;
+}
+hr:not([size]) {
+  height: 1px;
+}
 
 /* -------------------------- */
 /* General */
@@ -58,6 +68,7 @@ a:hover {
   padding: 20px;
   margin-bottom: 20px;
   text-align: left;
+  margin-top: 10px;
 }
 
 /* -------------------------- */
@@ -289,7 +300,7 @@ a:hover {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 2rem 1rem;
+  padding: 10px 1rem 2rem;
   text-align: center;
 }
 
@@ -313,13 +324,16 @@ a:hover {
   text-decoration: none;
 }
 
-.bw-logo {
+.brand-img {
   width: 100%;
   max-width: 193px;
   height: auto;
+  transition: all 0.3s ease;
+}
+
+.bw-logo {
   filter: grayscale(100%);
   opacity: 0.75;
-  transition: all 0.3s ease;
   padding: 12px 5px 15px 5px;
 }
 
